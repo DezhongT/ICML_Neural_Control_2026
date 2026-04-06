@@ -3,6 +3,7 @@ import torch
 import torch.nn as nn
 import matplotlib.pyplot as plt
 import pandas as pd
+import pickle
 from pathlib import Path
 
 from utils import TrueDEQSpring, neural_control_rhc, plot_neural_control
@@ -10,7 +11,13 @@ from utils import plot_results
 
 # load model from check point
 ckpt_path = Path(__file__).resolve().parent / "checkpoints" / "true_deq_spring.pt"
-ckpt = torch.load(ckpt_path, map_location="cpu")
+try:
+    ckpt = torch.load(ckpt_path, map_location="cpu")
+except pickle.UnpicklingError:
+    # PyTorch 2.6+ defaults to weights_only=True.
+    # This checkpoint contains trusted Python objects (e.g., numpy arrays),
+    # so we explicitly allow full unpickling.
+    ckpt = torch.load(ckpt_path, map_location="cpu", weights_only=False)
 
 cfg = ckpt.get("config", {})
 model = TrueDEQSpring(
@@ -18,7 +25,7 @@ model = TrueDEQSpring(
     max_iter=cfg.get("max_iter", 80),
     tol=cfg.get("tol", 1e-8),
     eps_min=cfg.get("eps_min", 0.0),
-    eps_max=cfg.get("eps_max", 2.0),
+    eps_max=cfg.get("eps_max", 1.0),
 )
 model.load_state_dict(ckpt["model_state_dict"], strict=True)
 model.eval()
@@ -46,7 +53,7 @@ plot_results(model, history, data_expt, eps_min=0.0, eps_max=1.0, num=400)
 # Target: eps*(lambda) = 0.5*sin(2*pi*lambda) + 0.5
 # 1 full periods over [0,1], strain stays in [0, 1]
 def eps_target_fn(lam):
-    return 0.0125 * np.sin(2.0 * np.pi * lam) + 0.0125
+    return 0.025 * np.sin(2.0 * np.pi * lam) + 0.025
 
 # Initial condition
 eps0   = torch.tensor([[eps_target_fn(0.0)]], dtype=torch.float32)

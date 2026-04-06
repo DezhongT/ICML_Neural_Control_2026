@@ -8,7 +8,7 @@ from pathlib import Path
 
 
 # Load the XLSX file from the /content folder, selecting only the desired columns
-xlsx_file_path = '/home/dezhongt/Desktop/ICML_Neural_Control_2026/content/Slinky_Data.xlsx'
+xlsx_file_path = 'content/Slinky_Data.xlsx'
 df_xlsx = pd.read_excel(xlsx_file_path, usecols=['Stretch (m)', 'Force (N) - zero adjusted'])
 data_expt = df_xlsx[['Stretch (m)', 'Force (N) - zero adjusted']].values.astype(np.float32)
 
@@ -33,6 +33,7 @@ from utils import ConvexEnergyMLP, train_true_deq, validate, plot_results
 
 # --- Stage 1: train DEQ energy model ---
 eps_max = data_expt[:, 0].max() # Identify the maximum stretch
+eps_max = 0.06
 
 model, history = train_true_deq(
     data_np=data_expt, hidden=64, lr=1e-2, epochs=3000,

@@ -130,6 +130,29 @@ class EquilibriumSolve(torch.autograd.Function):
         return (grad_w, None, None, None, None, None, *grad_params)
 
 
+# class TrueDEQSpring(nn.Module):
+#     def __init__(self, hidden=64, max_iter=80, tol=1e-8, eps_min=0.0, eps_max=2.0):
+#         super().__init__()
+#         self.energy_net = ConvexEnergyMLP(hidden=hidden)
+#         self.max_iter = max_iter
+#         self.tol = tol
+#         self.eps_min = eps_min
+#         self.eps_max = eps_max
+
+#     def forward(self, w):
+#         params = tuple(self.energy_net.parameters())
+#         return EquilibriumSolve.apply(
+#             w, self.energy_net, self.max_iter, self.tol,
+#             self.eps_min, self.eps_max, *params,
+#         )
+
+#     def energy(self, eps, params = None):          return self.energy_net.energy(eps)
+#     def force(self, eps, create_graph=True): return self.energy_net.force(eps, create_graph=create_graph)
+#     def force_value(self, eps):     return self.energy_net.force_value(eps)
+#     def stiffness_value(self, eps): return self.energy_net.stiffness_value(eps)
+#     def solve_equilibrium(self, w): return self.forward(w)
+
+
 class TrueDEQSpring(nn.Module):
     def __init__(self, hidden=64, max_iter=80, tol=1e-8, eps_min=0.0, eps_max=2.0):
         super().__init__()
@@ -146,11 +169,21 @@ class TrueDEQSpring(nn.Module):
             self.eps_min, self.eps_max, *params,
         )
 
-    def energy(self, eps):          return self.energy_net.energy(eps)
-    def force(self, eps, create_graph=True): return self.energy_net.force(eps, create_graph=create_graph)
-    def force_value(self, eps):     return self.energy_net.force_value(eps)
-    def stiffness_value(self, eps): return self.energy_net.stiffness_value(eps)
-    def solve_equilibrium(self, w): return self.forward(w)
+    def energy(self, eps, params=None):
+        return self.energy_net.energy(eps, params=params)
+
+    def force(self, eps, params=None, create_graph=True):
+        return self.energy_net.force(eps, params=params, create_graph=create_graph)
+
+    def force_value(self, eps):
+        return self.energy_net.force_value(eps)
+
+    def stiffness_value(self, eps):
+        return self.energy_net.stiffness_value(eps)
+
+    def solve_equilibrium(self, w):
+        return self.forward(w)
+
 
 
 def train_true_deq(
