@@ -80,19 +80,19 @@ This section provides additional baseline comparison results with [iCEM](https:/
 The plots below compare iCEM with our Neural Control method (Adjoint + RHC) on all three tasks. The results show that iCEM struggles on these challenging deformable manipulation problems, while Neural Control achieves substantially better performance.
 
 <p align="center">
-  <img src="iCEM_relevant/plots/plot_task1.png" alt="iCEM comparison on task 1">
+  <img src="iCEM_relevant/plots/task1.png" alt="iCEM comparison on task 1">
   <br>
   <em>Figure 5. Comparison between iCEM and Neural Control on Task 1.</em>
 </p>
 
 <p align="center">
-  <img src="iCEM_relevant/plots/plot_task2.png" alt="iCEM comparison on task 2">
+  <img src="iCEM_relevant/plots/task2.png" alt="iCEM comparison on task 2">
   <br>
   <em>Figure 6. Comparison between iCEM and Neural Control on Task 2.</em>
 </p>
 
 <p align="center">
-  <img src="iCEM_relevant/plots/plot_task3.png" alt="iCEM comparison on task 3">
+  <img src="iCEM_relevant/plots/task3.png" alt="iCEM comparison on task 3">
   <br>
   <em>Figure 7. Comparison between iCEM and Neural Control on Task 3.</em>
 </p>
