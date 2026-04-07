@@ -6,18 +6,17 @@ The supplementary materials are organized as follows:
 - **iCEM baseline results**, including comparison plots and tables.
 - **Videos of the robotic experiments** shown in Fig. 5.
 
+### Validation on a learned DEQ model
+This section provides supplementary materials for the additional validation experiment based on a learned [DEQ-style equilibrium model](https://proceedings.neurips.cc/paper/2019/hash/01386bd6d8e091c2ab4c7c7de644d37b-Abstract.html). The training data consists of force–strain measurements collected from a slinky, a common toy encountered in everyday life. A video of the data collection process is shown below.
 ***
 
 <p align="center">
-<img src="images/knot_tying.png" alt>
+<img src="DEQ_relevant/video/data_collection.gif" alt>
 <br>
 <em> Figure 1. Simulation examples for tying overhand knots with various unknotting numbers. </em>
 </p>
 
 ***
-### Validation on a learned DEQ model
-This section provides supplementary materials for the additional validation experiment based on a learned [DEQ-style equilibrium model](https://proceedings.neurips.cc/paper/2019/hash/01386bd6d8e091c2ab4c7c7de644d37b-Abstract.html). The training data consists of force–strain measurements collected from a slinky, a common toy encountered in everyday life. A video of the data collection process is shown below.
-
 
 
 Install the following C++ dependencies:
