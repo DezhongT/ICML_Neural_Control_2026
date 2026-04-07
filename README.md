@@ -31,7 +31,7 @@ $$
 \varepsilon^*(\lambda) = 0.05\sin(2\pi\lambda) + 0.05, \qquad \lambda \in [0,1].
 $$
 
-This experiment is intended to provide a concrete validation on a learned implicit / DEQ-style model beyond the original mechanics simulator.
+This experiment is intended to provide a concrete validation on a learned implicit / DEQ-style model beyond the original physics simulator.
 
 ### Data collection
 A video of the force–strain data collection process is shown below.
