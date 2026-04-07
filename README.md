@@ -6,25 +6,92 @@ The supplementary materials are organized as follows:
 - **iCEM baseline results**, including comparison plots and tables.
 - **Videos of the robotic experiments** shown in Fig. 5.
 
-### Validation on a learned DEQ model
-This section provides supplementary materials for the additional validation experiment based on a learned [DEQ-style equilibrium model](https://proceedings.neurips.cc/paper/2019/hash/01386bd6d8e091c2ab4c7c7de644d37b-Abstract.html). The training data consists of force–strain measurements collected from a slinky, a common toy encountered in everyday life. A video of the data collection process is shown below.
+# Anonymous Supplementary Materials for ICML Rebuttal
+
+This anonymous website provides supplementary materials referenced in the rebuttal for the submission **“Neural Control: Adjoint Learning Through Equilibrium Constraints.”**
+
+The materials are organized to directly address reviewer questions regarding:
+- validation on a learned DEQ-style equilibrium model,
+- comparison with a stronger modern derivative-free baseline (iCEM),
+- and access to supplementary videos and plots.
+
+All contents are provided in anonymized form for review purposes only.
 
 ---
+
+## 1. Validation on a learned DEQ-style equilibrium model
+
+This section provides supplementary materials for the additional validation experiment based on a learned DEQ-style equilibrium model.
+
+### Overview
+We collect force–strain measurements from a slinky under one-end actuation and use these data to train a neural energy model \(E_\theta(\varepsilon)\). The resulting equilibrium state \(\varepsilon^\star\) under control input \(z\) is defined implicitly by
+
+$$G(\varepsilon^\star, z; \theta) = F_\theta(\varepsilon^\star) - z = 0,
+\qquad
+F_\theta = \partial E_\theta / \partial \varepsilon.
+$$
+
+The forward equilibrium is solved to convergence, and training uses implicit differentiation / IFT without unrolling, in the same spirit as DEQ methods.
+
+After training, this learned implicit model is frozen and used as the forward model for Neural Control, which optimizes a force trajectory \(z(\lambda)\) so that the resulting equilibrium strain trajectory tracks the target
+
+$$
+\varepsilon^*(\lambda) = 0.05\sin(2\pi\lambda) + 0.05, \qquad \lambda \in [0,1].
+$$
+
+This experiment is intended to provide a concrete validation on a learned implicit / DEQ-style model beyond the original mechanics simulator.
+
+### Data collection
+A video of the force–strain data collection process is shown below.
 
 <p align="center">
   <img src="DEQ_relevant/video/data_collection.gif" alt="Training data collection for the slinky force-strain dataset">
   <br>
-  <em>Figure 1. Training data collection for the force-strain dataset of a slinky through robotic manipulation.</em>
+  <em>Figure 1. Training data collection for the force–strain dataset of a slinky through robotic manipulation.</em>
 </p>
 
-The original video is available in [DEQ_relevant/video/data_collection.mp4](DEQ_relevant/video/data_collection.mp4)
-*
-A DEQ-style equilibrium model is trained and implemented to serve as the implicit equilibrium model to express the structural information of the system. The trainig process and relevant plot is show as below:
+Original video: [DEQ_relevant/video/data_collection.mp4](DEQ_relevant/video/data_collection.mp4)
+
+### DEQ model training
+The training curve of the learned DEQ-style equilibrium model is shown below.
+
 <p align="center">
-  <img src="DEQ_relevant/plot/training_plot.png" alt="Training of DEQ model">
+  <img src="DEQ_relevant/plots/training_loss.png" alt="Training of DEQ model">
   <br>
-  <em>Figure 2. Training plot of the DEQ model and the comparison between the mode's inference and training data.</em>
+  <em>Figure 2. Training curve of the DEQ-style equilibrium model.</em>
 </p>
+
+### DEQ model inference
+The learned force–strain relation and its agreement with experimental data are shown below.
+
+<p align="center">
+  <img src="DEQ_relevant/plots/DEQ_model.png" alt="Inference of DEQ model">
+  <br>
+  <em>Figure 3. Inference results of the learned DEQ-style equilibrium model compared with experimental data.</em>
+</p>
+
+### Neural Control on top of the learned DEQ model
+We then apply Neural Control to optimize the force input so that the equilibrium strain follows the sinusoidal target above.
+
+<p align="center">
+  <img src="DEQ_relevant/plots/training_plot.png" alt="Learning of neural control on DEQ model">
+  <br>
+  <em>Figure 4. Optimization process of Neural Control on the learned DEQ-style equilibrium model.</em>
+</p>
+
+The final result shows near-perfect sinusoidal strain tracking, with segment losses on the order of \(10^{-7}\)–\(10^{-8}\).
+
+
+## 2. iCEM baseline results
+
+This section provides additional baseline comparison results with [iCEM](https://proceedings.mlr.press/v155/pinneri21a).
+
+The plots below compare iCEM with our Neural Control method (Adjoint + RHC) on all three tasks. The results show that iCEM struggles on these challenging deformable manipulation problems, while Neural Control achieves substantially better performance.
+
+
+
+
+
 
 
 
