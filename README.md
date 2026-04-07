@@ -7,9 +7,6 @@ The supplementary materials are organized as follows:
 - **Videos of the robotic experiments** shown in Fig. 5.
 
 ***
-Contact model for 3D elastic rod simulations. Uses [Discrete Elastic Rod (DER)](http://www.cs.columbia.edu/cg/pdfs/143-rods.pdf) framework and incorporates contact and friction. Formulates a contact potential as a twice differentiable analytical expression through smooth approximations 
-and uses the subsequent energy gradient (forces) and Hessian (force Jacobian) to simulate contact and friction. Simulation examples using IMC to resolve contact and friction can be seen below in Figure 1.
-
 
 <p align="center">
 <img src="images/knot_tying.png" alt>
@@ -18,18 +15,11 @@ and uses the subsequent energy gradient (forces) and Hessian (force Jacobian) to
 </p>
 
 ***
+### Validation on a learned DEQ model
+This section provides supplementary materials for the additional validation experiment based on a learned [DEQ-style equilibrium model](https://proceedings.neurips.cc/paper/2019/hash/01386bd6d8e091c2ab4c7c7de644d37b-Abstract.html). The training data consists of force–strain measurements collected from a slinky, a common toy encountered in everyday life. A video of the data collection process is shown below.
 
-### Formulation Updates since the Published Paper
-- Explicit and hybrid formulations for IMC were removed. After a Hessian chain ruling bug fix, the fully implicit version is by far superior in terms of performance.
-- Friction has been changed to a fully implicit formulation.
-- Smooth distance has been exchanged for piecewise analytical distance.
-- For full updates, please refer to our new paper [here](https://arxiv.org/abs/2205.10309).
 
-***
 
-## How to Use
-
-### Dependencies
 Install the following C++ dependencies:
 - [Eigen](http://eigen.tuxfamily.org/index.php?title=Main_Page)
   - Eigen is used for various linear algebra operations.
