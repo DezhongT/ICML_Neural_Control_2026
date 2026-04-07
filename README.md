@@ -16,7 +16,7 @@ All contents are provided in anonymized form for review purposes only.
 This section provides supplementary materials for the additional validation experiment based on a learned DEQ-style equilibrium model.
 
 ### Overview
-We collect force–strain measurements from a slinky under one-end actuation and use these data to train a neural energy model $$E_\theta(\varepsilon)$$. The resulting equilibrium state $$\varepsilon^\star$$ under control input $$z$$ is defined implicitly by
+We collect force–strain measurements from a slinky under one-end actuation and use these data to train a neural energy model $E_\theta(\varepsilon)$. The resulting equilibrium state $\varepsilon^\star$ under control input $z$ is defined implicitly by
 
 $$G(\varepsilon^\star, z; \theta) = F_\theta(\varepsilon^\star) - z = 0,
 \qquad
@@ -25,7 +25,7 @@ $$
 
 The forward equilibrium is solved to convergence, and training uses implicit differentiation / IFT without unrolling, in the same spirit as DEQ methods.
 
-After training, this learned implicit model is frozen and used as the forward model for Neural Control, which optimizes a force trajectory \(z(\lambda)\) so that the resulting equilibrium strain trajectory tracks the target
+After training, this learned implicit model is frozen and used as the forward model for Neural Control, which optimizes a force trajectory $z(\lambda)$ so that the resulting equilibrium strain trajectory tracks the target
 
 $$
 \varepsilon^*(\lambda) = 0.05\sin(2\pi\lambda) + 0.05, \qquad \lambda \in [0,1].
