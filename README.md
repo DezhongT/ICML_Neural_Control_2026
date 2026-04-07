@@ -81,13 +81,38 @@ We then apply Neural Control to optimize the force input so that the equilibrium
 
 The final result shows near-perfect sinusoidal strain tracking, with segment losses on the order of \(10^{-7}\)–\(10^{-8}\).
 
-
 ## 2. iCEM baseline results
 
 This section provides additional baseline comparison results with [iCEM](https://proceedings.mlr.press/v155/pinneri21a).
 
 The plots below compare iCEM with our Neural Control method (Adjoint + RHC) on all three tasks. The results show that iCEM struggles on these challenging deformable manipulation problems, while Neural Control achieves substantially better performance.
 
+<p align="center">
+  <img src="iCEM_relevant/plots/plot_task1.png" alt="iCEM comparison on task 1">
+  <br>
+  <em>Figure 4. Comparison between iCEM and Neural Control on Task 1.</em>
+</p>
+
+<p align="center">
+  <img src="iCEM_relevant/plots/plot_task2.png" alt="iCEM comparison on task 2">
+  <br>
+  <em>Figure 5. Comparison between iCEM and Neural Control on Task 2.</em>
+</p>
+
+<p align="center">
+  <img src="iCEM_relevant/plots/plot_task3.png" alt="iCEM comparison on task 3">
+  <br>
+  <em>Figure 6. Comparison between iCEM and Neural Control on Task 3.</em>
+</p>
+
+The quantitative results, together with the corresponding time complexity and memory efficiency, are summarized in the table below.
+
+
+## Quantitative comparison
+| Method | Time / update | Memory / update | Task 1 Time (s) ↓ | Task 1 Best loss ↓ | Task 2 Time (s) ↓ | Task 2 Best loss ↓ | Task 3 Time (s) ↓ | Task 3 Best loss ↓ |
+|---|---|---:|---:|---:|---:|---:|---:|---:|
+| iCEM | O(P K C_eq) | O(P n_Theta) | `[...]` | `[...]` | `[...]` | `[...]` | `[...]` | `[...]` |
+| **Adjoint + RHC** | O(H C_eq + H C_lin) ≈ O(H C_eq) | O(H (n_x + n_z) + n_Theta) | **`[...]`** | **`[...]`** | **`[...]`** | **`[...]`** | **`[...]`** | **`[...]`** |
 
 
 
