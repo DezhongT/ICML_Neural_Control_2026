@@ -1,6 +1,11 @@
-## [Supplementary materials for manuscript ``Neural Control: Adjoint Learning Through Equilibrium Constraints'']()
+## [Supplementary materials for manuscript ''Neural Control: Adjoint Learning Through Equilibrium Constraints'']()
 
-NOTE: It is now recommended for users to use our general soft sim framework [DisMech](https://github.com/StructuresComp/dismech-rods) to simulate the knot examples from this paper as that codebase contains many improvements over this outdated repo.
+This repository contains supplementary materials for the anonymous manuscript **“Neural Control: Adjoint Learning Through Equilibrium Constraints”**. 
+The supplementary materials are organized as follows:
+- **Validation on a learned DEQ model**, including data collection videos and result plots.
+- **iCEM baseline results**, including comparison plots and tables.
+- **Videos of the robotic experiments** shown in Fig. 5.
+
 ***
 Contact model for 3D elastic rod simulations. Uses [Discrete Elastic Rod (DER)](http://www.cs.columbia.edu/cg/pdfs/143-rods.pdf) framework and incorporates contact and friction. Formulates a contact potential as a twice differentiable analytical expression through smooth approximations 
 and uses the subsequent energy gradient (forces) and Hessian (force Jacobian) to simulate contact and friction. Simulation examples using IMC to resolve contact and friction can be seen below in Figure 1.
