@@ -18,8 +18,7 @@ This section provides supplementary materials for the additional validation expe
 ### Overview
 We collect force–strain measurements from a slinky under one-end actuation and use these data to train a neural energy model $E_\theta(\varepsilon)$. The resulting equilibrium state $\varepsilon^\star$ under control input $z$ is defined implicitly by
 
-$$G(\varepsilon^\star, z; \theta) = F_\theta(\varepsilon^\star) - z = 0, \qquad F_\theta = \partial E_\theta / \partial \varepsilon.
-$$
+$$G(\varepsilon^\star, z; \theta) = F_\theta(\varepsilon^\star) - z = 0$$, $$ F_\theta = \partial E_\theta / \partial \varepsilon.$$
 
 The forward equilibrium is solved to convergence, and training uses implicit differentiation / IFT without unrolling, in the same spirit as DEQ methods.
 
