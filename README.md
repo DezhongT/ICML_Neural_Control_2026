@@ -99,7 +99,7 @@ The quantitative results, together with the corresponding time complexity and me
 ## Quantitative comparison and theoretical complexity
 | Method | Time / update | Memory / update | Task 1 Time (s) ↓ | Task 1 Best loss ↓ | Task 2 Time (s) ↓ | Task 2 Best loss ↓ | Task 3 Time (s) ↓ | Task 3 Best loss ↓ |
 |---|---|---:|---:|---:|---:|---:|---:|---:|
-| iCEM | O(P K C<sub>eq</sub>) | O(P n<sub>θ</sub>) | `[2332.2 ± 126.7]` | `[1.5e-2 ± 1.5e-2]` | `[]` | `[...]` | `[9907.3 ± 59.2]` | `[1.2e-2 ± 7.3e-3]` |
+| iCEM | O(P K C<sub>eq</sub>) | O(P n<sub>θ</sub>) | `[2332.2 ± 126.7]` | `[1.5e-2 ± 1.5e-2]` | `[3223.0 ± 25.7s]` | `[9.8e-02 ± 3.6e-02]` | `[9907.3 ± 59.2]` | `[1.2e-2 ± 7.3e-3]` |
 | **Adjoint + RHC** | O(H C<sub>eq</sub> + H C<sub>lin</sub>) ≈ O(H C<sub>eq</sub>)  |O(H (n<sub>x</sub> + n<sub>z</sub>) + n<sub>θ</sub>) | **`[16.1 ± 2.8s]`** | **`[2.3e-7 ± 3.0e-7]`** | **`[186.9 ± 24.8s]`** | **`[3.6e-8 ± 3.6e-8]`** | **`[50.9 ± 6.1s]`** | **`[3.8e-8 ± 7.4e-9]`** |
 
 ## 3. Original task videos
