@@ -8,13 +8,18 @@ The supplementary materials are organized as follows:
 
 ### Validation on a learned DEQ model
 This section provides supplementary materials for the additional validation experiment based on a learned [DEQ-style equilibrium model](https://proceedings.neurips.cc/paper/2019/hash/01386bd6d8e091c2ab4c7c7de644d37b-Abstract.html). The training data consists of force–strain measurements collected from a slinky, a common toy encountered in everyday life. A video of the data collection process is shown below.
-***
+
+---
 
 <p align="center">
-<img src="DEQ_relevant/video/data_collection.gif" alt>
-<br>
-<em> Figure 1. Simulation examples for tying overhand knots with various unknotting numbers. </em>
+  <img src="DEQ_relevant/video/data_collection.gif" alt="Training data collection for the slinky force-strain dataset">
+  <br>
+  <em>Figure 1. Training data collection for the force-strain dataset of a slinky through robotic manipulation.</em>
 </p>
+
+The original video is available in [DEQ_relevant/video/](DEQ_relevant/video/)
+
+
 
 ***
 
