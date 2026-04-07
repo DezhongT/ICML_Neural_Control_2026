@@ -164,9 +164,8 @@ These materials are provided to make the experimental outcomes easier to inspect
   <br>
   <em>Figure 15. Task 3: shape control of the elastic strip toward a prescribed target configuration.</em>
 </p>
-Original videos and images can be found in ```Experimental_Results/video/```
 
----
+Original videos and images can be found in ``Experimental_Results/video/``
 
 
 
