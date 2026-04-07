@@ -145,6 +145,33 @@ These materials are provided to make the experimental outcomes easier to inspect
   <em>Figure 11. Task 1, Example 4: driving a selected node of the elastic strip to a prescribed target position.</em>
 </p>
 
+### Task 2: tracing the middle node of an elastic strip along a prescribed trajectory
+
+<p align="center">
+  <img src="Experimental_Results/Task2_case1/t2c1_sample.gif" alt="Task 2, case 1">
+  <br>
+  <em>Figure 12. Task 2, Example 1: tracing the middle node of the elastic strip along a prescribed trajectory.</em>
+</p>
+
+<p align="center">
+  <img src="Experimental_Results/Task2_case2/t2c2_sample.gif" alt="Task 2, case 2">
+  <br>
+  <em>Figure 13. Task 2, Example 2: tracing the middle node of the elastic strip along a prescribed trajectory.</em>
+</p>
+
+<p align="center">
+  <img src="Experimental_Results/Task2_case3/t2c3_sample.gif" alt="Task 2, case 3">
+  <br>
+  <em>Figure 14. Task 2, Example 3: tracing the middle node of the elastic strip along a prescribed trajectory.</em>
+</p>
+
+### Task 3: shape control of an elastic strip
+
+<p align="center">
+  <img src="Experimental_Results/Task3/t3_sample.gif" alt="Task 3">
+  <br>
+  <em>Figure 15. Task 3: shape control of the elastic strip toward a prescribed target configuration.</em>
+</p>
 
 ---
 
