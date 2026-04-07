@@ -17,7 +17,7 @@ This section provides supplementary materials for the additional validation expe
   <em>Figure 1. Training data collection for the force-strain dataset of a slinky through robotic manipulation.</em>
 </p>
 
-The original video is available in [DEQ_relevant/video/](DEQ_relevant/video/)
+The original video is available in [DEQ_relevant/video/data_collection.mp4](DEQ_relevant/video/data_collection.mp4)
 
 
 
