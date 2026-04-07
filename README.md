@@ -1,13 +1,5 @@
 ## [Supplementary materials for manuscript ''Neural Control: Adjoint Learning Through Equilibrium Constraints'']()
 
-This repository contains supplementary materials for the anonymous manuscript **“Neural Control: Adjoint Learning Through Equilibrium Constraints”**. 
-The supplementary materials are organized as follows:
-- **Validation on a learned DEQ model**, including data collection videos and result plots.
-- **iCEM baseline results**, including comparison plots and tables.
-- **Videos of the robotic experiments** shown in Fig. 5.
-
-# Anonymous Supplementary Materials for ICML Rebuttal
-
 This anonymous website provides supplementary materials referenced in the rebuttal for the submission **“Neural Control: Adjoint Learning Through Equilibrium Constraints.”**
 
 The materials are organized to directly address reviewer questions regarding:
