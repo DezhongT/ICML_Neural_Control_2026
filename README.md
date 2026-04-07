@@ -16,7 +16,7 @@ All contents are provided in anonymized form for review purposes only.
 This section provides supplementary materials for the additional validation experiment based on a learned DEQ-style equilibrium model.
 
 ### Overview
-We collect force–strain measurements from a slinky under one-end actuation and use these data to train a neural energy model \(E_\theta(\varepsilon)\). The resulting equilibrium state \(\varepsilon^\star\) under control input \(z\) is defined implicitly by
+We collect force–strain measurements from a slinky under one-end actuation and use these data to train a neural energy model $$E_\theta(\varepsilon)$$. The resulting equilibrium state $$\varepsilon^\star$$ under control input $$z$$ is defined implicitly by
 
 $$G(\varepsilon^\star, z; \theta) = F_\theta(\varepsilon^\star) - z = 0,
 \qquad
