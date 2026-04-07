@@ -50,7 +50,7 @@ A video of the force–strain data collection process is shown below.
   <em>Figure 1. Training data collection for the force–strain dataset of a slinky through robotic manipulation.</em>
 </p>
 
-Original video: [DEQ_relevant/video/data_collection.mp4](DEQ_relevant/video/data_collection.mp4)
+Original video can be found in ```DEQ_relevant/video/```
 
 ### DEQ model training
 The training curve of the learned DEQ-style equilibrium model is shown below.
@@ -172,6 +172,7 @@ These materials are provided to make the experimental outcomes easier to inspect
   <br>
   <em>Figure 15. Task 3: shape control of the elastic strip toward a prescribed target configuration.</em>
 </p>
+Original videos and images can be found in ```Experimental_Results/video/```
 
 ---
 
