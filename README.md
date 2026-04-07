@@ -18,10 +18,15 @@ This section provides supplementary materials for the additional validation expe
 </p>
 
 The original video is available in [DEQ_relevant/video/data_collection.mp4](DEQ_relevant/video/data_collection.mp4)
+*
+A DEQ-style equilibrium model is trained and implemented to serve as the implicit equilibrium model to express the structural information of the system. The trainig process and relevant plot is show as below:
+<p align="center">
+  <img src="DEQ_relevant/plot/training_plot.png" alt="Training of DEQ model">
+  <br>
+  <em>Figure 2. Training plot of the DEQ model and the comparison between the mode's inference and training data.</em>
+</p>
 
 
-
-***
 
 
 Install the following C++ dependencies:
